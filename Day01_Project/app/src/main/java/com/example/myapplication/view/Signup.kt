@@ -37,7 +37,7 @@ fun Signup(navController: NavController,appRepo: Repositry) {
     var context = LocalContext.current;
 
 
-    var viewModel: SignupLoginViewModel=viewModel();
+   var viewModel: SignupLoginViewModel = viewModel();
 
     Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center)
     {

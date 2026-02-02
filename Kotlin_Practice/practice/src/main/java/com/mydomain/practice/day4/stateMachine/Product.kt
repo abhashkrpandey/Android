@@ -1,4 +1,7 @@
 package com.mydomain.practice.day4.stateMachine
 
-class Product {
-}
+data class Product (
+    val productId:Int,
+    val productName:String,
+    val price: Float
+)

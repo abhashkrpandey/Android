@@ -2,6 +2,7 @@ package com.mydomain.compose_practice.view
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -19,10 +20,14 @@ import androidx.navigation.compose.rememberNavController
 import com.mydomain.compose_practice.Routes
 import com.mydomain.compose_practice.models.Movie
 import com.mydomain.compose_practice.ui.theme.Compose_PracticeTheme
+import androidx.compose.material3.Button
+import androidx.compose.ui.Alignment
+import com.mydomain.compose_practice.localThemeIsDark
 
 @Composable
 fun ListOfMoviesScreen(navController: NavController)
 {
+      var isDark = localThemeIsDark.current
       val listOfMovies = arrayListOf(
           Movie(1,"Movie_1",8.9f)
           ,Movie(2,"Movie_2",7.5f)
@@ -32,17 +37,28 @@ fun ListOfMoviesScreen(navController: NavController)
           Movie(6,"Movie_6",8.1f)
       )
     val listState = remember { mutableStateOf(listOfMovies) }
-    LazyColumn(modifier = Modifier
-        .padding(50.dp)
-        .fillMaxSize(), verticalArrangement = Arrangement.spacedBy(20.dp)) {
-        items(listState.value)
-        { it->
-            Text(text= it.movieName, modifier = Modifier.clickable(onClick = {
-                navController.currentBackStackEntry?.savedStateHandle?.set("movie",it)
-                println(it)
-                navController.navigate(Routes.MovieDetailsScreen.route)
-            }))
-            HorizontalDivider(thickness = 3.dp)
+    Column(modifier = Modifier.padding(50.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center) {
+        Button(onClick = {
+             isDark.value=!isDark.value
+        }) {
+          Text("Change Theme")
+        }
+        LazyColumn(
+            modifier = Modifier
+                .padding(50.dp)
+                .fillMaxSize(), verticalArrangement = Arrangement.spacedBy(20.dp)
+        ) {
+            items(listState.value)
+            { it ->
+                Text(text = it.movieName, modifier = Modifier.clickable(onClick = {
+                    navController.currentBackStackEntry?.savedStateHandle?.set("movie", it)
+                    println(it)
+                    navController.navigate(Routes.MovieDetailsScreen.route)
+                }))
+                HorizontalDivider(thickness = 3.dp)
+            }
         }
     }
 }

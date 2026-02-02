@@ -1,4 +1,8 @@
 package com.mydomain.practice.day4.stateMachine
 
-enum class OrderStatus {
+enum  class OrderStatus {
+     PENDING,
+    PLACED,
+     SHIPPED,
+     DELIVERED
 }

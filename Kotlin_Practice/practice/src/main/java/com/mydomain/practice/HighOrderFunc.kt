@@ -10,7 +10,7 @@ fun main()
    }
     println("Main Func:$list")
 }
-fun helper(nullRemover:()->List<Int>):List<Int>
+fun helper(nullRemover:()->List<Int>):List<Int>  // higher order func
 {
     val list=  nullRemover()
     println("High-Order Func:$list")

@@ -11,7 +11,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-import com.mydomain.compose_practice.Routes
 import com.mydomain.compose_practice.models.Movie
 import com.mydomain.compose_practice.ui.theme.Compose_PracticeTheme
 
