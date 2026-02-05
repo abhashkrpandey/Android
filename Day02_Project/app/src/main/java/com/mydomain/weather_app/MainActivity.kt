@@ -4,7 +4,12 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Surface
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+import coil3.compose.AsyncImage
 import com.mydomain.weather_app.ui.theme.Weather_AppTheme
 import com.mydomain.weather_app.view.PostScreen
 
@@ -17,7 +22,12 @@ class MainActivity : ComponentActivity() {
         setContent {
             Weather_AppTheme {
                 Surface() {
-                    PostScreen()
+//                    PostScreen()
+                    AsyncImage(
+                        modifier = Modifier.size(100.dp),
+                        model = "https://picsum.photos/200/300",
+                        contentDescription = "",
+                    )
                 }
             }
         }

@@ -10,8 +10,12 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.mydomain.compose_practice.Routes
+import com.mydomain.compose_practice.ui.theme.Pink40
 import kotlinx.coroutines.delay
 
 @Composable
@@ -30,7 +34,7 @@ fun LoadingScreen(navController: NavController) {
             horizontalAlignment = Alignment.CenterHorizontally
             )
          {
-            CircularProgressIndicator()
+            CircularProgressIndicator(strokeWidth = 3.dp, trackColor = Pink40, strokeCap = StrokeCap.Butt )
         }
     }
     else{

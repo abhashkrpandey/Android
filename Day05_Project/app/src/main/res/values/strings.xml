@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Compose_Practice</string>
+    <string name="author">Welcome %1$s | Age : %2$d</string>
+    <string name="browserLink">https://www.netflix.com/in/</string>
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
